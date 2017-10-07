@@ -1,11 +1,7 @@
 # dotifles
 
-Download plug.vim
-```bash
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-```    
-Install plugins with (in vim)
-```
-:PlugInstall
-```
+These are my dotfiles. I'll have an install script here, eventually.
+
+## vim
+
+Download [plug.vim](https://github.com/junegunn/vim-plug) and `:PlugInstall`with `.vimrc` open in vim.
