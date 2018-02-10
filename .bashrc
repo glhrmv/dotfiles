@@ -14,7 +14,7 @@ find_git_branch() {
 # prompt
 PROMPT_COMMAND="find_git_branch; $PROMPT_COMMAND"
 
-export PS1="\[$(tput bold)\]\[\033[38;5;69m\]\u\[$(tput sgr0)\]\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput bold)\]\h\[$(tput sgr0)\]:[\[$(tput sgr0)\]\[\033[38;5;6m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\]]\$git_branch: \[$(tput sgr0)\]"
+export PS1="\[\e[0;37m\]\u \[\e[0;37m\]@ \[\e[0;37m\]\h \[\e[0;37m\][\[\e[0;37m\]\w\[\e[0;37m\]]\[\e[0;37m\]\$git_branch: \[\e[0m\]"
 
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
