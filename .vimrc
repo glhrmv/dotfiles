@@ -3,10 +3,11 @@ call plug#begin('~/.vim/plugged')
 
 " General plugins
 Plug 'morhetz/gruvbox'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
+Plug 'kien/ctrlp.vim'
 Plug 'rstacruz/vim-closer'
 Plug 'tpope/vim-fugitive'
 Plug 'ervandew/supertab'
@@ -34,6 +35,9 @@ let g:jsx_ext_required = 0
 
 " Other settings (start) 
 
+" Use Vim settings, rather than Vi settings
+set nocompatible
+
 " Enable true colour support
 set t_8f=\[[38;2;%lu;%lu;%lum
 set t_8b=\[[48;2;%lu;%lu;%lum
@@ -43,9 +47,6 @@ set t_Co=256
 " Use a color scheme
 colorscheme gruvbox
 set background=dark
-
-" Use Vim settings, rather than Vi settings
-set nocompatible
 
 " Enable use of the mouse
 set mouse=a
