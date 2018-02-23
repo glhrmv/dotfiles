@@ -11,6 +11,8 @@ Plug 'kien/ctrlp.vim'
 Plug 'rstacruz/vim-closer'
 Plug 'tpope/vim-fugitive'
 Plug 'ervandew/supertab'
+Plug 'junegunn/goyo.vim'
+Plug 'vim-scripts/a.vim'
 
 " Language-specific plugins
 Plug 'elixir-editors/vim-elixir'
@@ -51,6 +53,11 @@ set background=dark
 " Enable use of the mouse
 set mouse=a
 set ttymouse=xterm2
+
+" Folding
+set foldmethod=syntax
+set foldlevel=1
+set foldnestmax=1
 
 " Split pane navigation
 nnoremap <C-J> <C-W><C-J>
