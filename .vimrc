@@ -1,3 +1,10 @@
+" Auto-install vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync
+endif
+
 " Plugins (start)
 call plug#begin('~/.vim/plugged')
 
@@ -9,16 +16,20 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 Plug 'kien/ctrlp.vim'
 Plug 'rstacruz/vim-closer'
-Plug 'tpope/vim-fugitive'
 Plug 'ervandew/supertab'
 Plug 'junegunn/goyo.vim'
 Plug 'vim-scripts/a.vim'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 
 " Language-specific plugins
 Plug 'elixir-editors/vim-elixir'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'mattn/emmet-vim'
+Plug 'ap/vim-css-color'
 Plug 'octol/vim-cpp-enhanced-highlight'
 
 call plug#end()
@@ -30,15 +41,17 @@ call plug#end()
 let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts = 1
 
+" NERDTree
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
 " vim-jsx
 let g:jsx_ext_required = 0
 
 " Plugin-specific settings (end)
 
 " Other settings (start) 
-
-" Use Vim settings, rather than Vi settings
-set nocompatible
 
 " Enable true colour support
 set t_8f=\[[38;2;%lu;%lu;%lum
@@ -48,7 +61,7 @@ set t_Co=256
 
 " Use a color scheme
 colorscheme gruvbox
-set background=dark
+" set background=dark
 
 " Enable use of the mouse
 set mouse=a
