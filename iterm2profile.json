@@ -1,5 +1,11 @@
 {
-  "Horizontal Spacing" : 1,
+  "Ansi 2 Color" : {
+    "Red Component" : 0.59607845544815063,
+    "Color Space" : "Calibrated",
+    "Blue Component" : 0.10196078568696976,
+    "Alpha Component" : 1,
+    "Green Component" : 0.59215688705444336
+  },
   "Tags" : [
 
   ],
@@ -378,7 +384,7 @@
     }
   },
   "Window Type" : 0,
-  "Blur Radius" : 1.3031163058863744,
+  "Blur Radius" : 4.2264276649746186,
   "Cursor Boost" : 0,
   "Background Image Location" : "",
   "Blur" : false,
@@ -424,13 +430,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.17254787683486938
   },
-  "Ansi 0 Color" : {
-    "Red Component" : 0.15686275064945221,
-    "Color Space" : "Calibrated",
-    "Blue Component" : 0.15686275064945221,
-    "Alpha Component" : 1,
-    "Green Component" : 0.15686275064945221
-  },
+  "Transparency" : 0.016079076776649746,
   "Ansi 1 Color" : {
     "Red Component" : 0.80000001192092896,
     "Color Space" : "Calibrated",
@@ -438,7 +438,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.14117647707462311
   },
-  "Transparency" : 0.041134597081218277,
+  "Custom Directory" : "Recycle",
   "Ansi 3 Color" : {
     "Red Component" : 0.84313726425170898,
     "Color Space" : "Calibrated",
@@ -446,13 +446,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.60000002384185791
   },
-  "Ansi 2 Color" : {
-    "Red Component" : 0.59607845544815063,
-    "Color Space" : "Calibrated",
-    "Blue Component" : 0.10196078568696976,
-    "Alpha Component" : 1,
-    "Green Component" : 0.59215688705444336
-  },
+  "Horizontal Spacing" : 1,
   "Ansi 5 Color" : {
     "Red Component" : 0.69411766529083252,
     "Color Space" : "Calibrated",
@@ -468,7 +462,7 @@
     "Alpha Component" : 1,
     "Green Component" : 0.61568629741668701
   },
-  "Normal Font" : "InputMono-Regular 12",
+  "Normal Font" : "Hack-Regular 12",
   "Link Color" : {
     "Red Component" : 0.7450980544090271,
     "Color Space" : "Calibrated",
@@ -476,6 +470,12 @@
     "Alpha Component" : 1,
     "Green Component" : 0.058823529630899429
   },
-  "Guid" : "901B4846-072C-4399-9398-F66D5638166B",
-  "Custom Directory" : "Recycle"
+  "Ansi 0 Color" : {
+    "Red Component" : 0.15686275064945221,
+    "Color Space" : "Calibrated",
+    "Blue Component" : 0.15686275064945221,
+    "Alpha Component" : 1,
+    "Green Component" : 0.15686275064945221
+  },
+  "Guid" : "901B4846-072C-4399-9398-F66D5638166B"
 }
