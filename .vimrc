@@ -10,15 +10,19 @@ call plug#begin('~/.vim/plugged')
 
 " General plugins
 Plug 'morhetz/gruvbox'
+Plug 'w0ng/vim-hybrid'
+Plug 'nanotech/jellybeans.vim'
+
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 Plug 'kien/ctrlp.vim'
-Plug 'rstacruz/vim-closer'
-Plug 'ervandew/supertab'
 Plug 'junegunn/goyo.vim'
 Plug 'vim-scripts/a.vim'
+Plug 'ervandew/supertab'
+Plug 'qpkorr/vim-renamer'
+Plug 'rstacruz/vim-closer'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -37,8 +41,7 @@ call plug#end()
 
 " Plugin-specific settings (start)
 
-" Airline 
-let g:airline_theme='gruvbox'
+" Airline
 let g:airline_powerline_fonts = 1
 
 " NERDTree
@@ -51,17 +54,14 @@ let g:jsx_ext_required = 0
 
 " Plugin-specific settings (end)
 
-" Other settings (start) 
+" Other settings (start)
 
 " Enable true colour support
-set t_8f=\[[38;2;%lu;%lu;%lum
-set t_8b=\[[48;2;%lu;%lu;%lum
-set termguicolors
-set t_Co=256
+set term=screen-256color
 
 " Use a color scheme
-colorscheme gruvbox
-" set background=dark
+set background=dark
+colors gruvbox
 
 " Enable use of the mouse
 set mouse=a
@@ -107,7 +107,7 @@ set wildmenu
 set display+=lastline
 
 " Indentation
-set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab                           
+set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
 
 set autoread
 
