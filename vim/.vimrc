@@ -61,7 +61,7 @@ set term=screen-256color
 
 " Use a color scheme
 set background=dark
-colors gruvbox
+colors jellybeans
 
 " Enable use of the mouse
 set mouse=a
