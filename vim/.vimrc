@@ -4,19 +4,15 @@
 
 if has('gui_running')
   " If we're on a graphical user interface,
+  " Set a font at specific size
+  set guifont=Hack:h12
   " Disable left and right scrollbars
   set guioptions=
-  " Set a font at specific size
-  set guifont=Hack:12
-else 
+else
   " If we're in the terminal,
   " Enable true colour support
   set term=screen-256color
 endif
-
-" Use a color scheme
-set background=dark
-colors jellybeans
 
 " Set leader key to ,
 let mapleader=","
@@ -161,3 +157,7 @@ let g:jsx_ext_required = 0
 " **********************
 " Plugins (end)
 " *************************
+
+" Use a color scheme
+set background=dark
+colors jellybeans
