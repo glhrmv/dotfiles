@@ -1,6 +1,6 @@
-" *************************
+" *******
 " Core settings (start)
-" **********************
+" *******
 
 if has('gui_running')
   " If we're on a graphical user interface,
@@ -19,6 +19,9 @@ let mapleader=","
 
 " Switch syntax highlighting on
 syntax on
+
+" Share system and vim clipboard
+set clipboard=unnamed
 
 " Show line numbers
 set number
@@ -97,9 +100,9 @@ set sessionoptions-=options
 " Core settings (end)
 " *************************
 
-" *************************
+" *******
 " Plugins (start)
-" **********************
+" *******
 
 " Auto-install vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -154,9 +157,9 @@ let NERDTreeDirArrows = 1
 " vim-jsx
 let g:jsx_ext_required = 0
 
-" **********************
+" *******
 " Plugins (end)
-" *************************
+" *******
 
 " Use a color scheme
 set background=dark
