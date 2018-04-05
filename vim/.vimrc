@@ -36,6 +36,7 @@ set foldlevel=1
 set foldnestmax=1
 
 " Split pane navigation
+" Using Ctrl + vim direction
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -43,6 +44,10 @@ nnoremap <C-H> <C-W><C-H>
 
 " Highlight cursor line
 set cursorline
+
+" Automatically look for ctags
+set autochdir
+set tags=tags;
 
 " Make backspace behave in a sane manner
 set backspace=indent,eol,start
@@ -96,9 +101,9 @@ endif
 
 set sessionoptions-=options
 
-" **********************
+" *******
 " Core settings (end)
-" *************************
+" *******
 
 " *******
 " Plugins (start)
@@ -133,6 +138,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'ludovicchabant/vim-gutentags'
 
 " Language-specific plugins
 Plug 'elixir-editors/vim-elixir'
