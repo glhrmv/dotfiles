@@ -139,6 +139,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'airblade/vim-gitgutter'
 
 " Language-specific plugins
 Plug 'elixir-editors/vim-elixir'
@@ -163,10 +164,18 @@ let NERDTreeDirArrows = 1
 " vim-jsx
 let g:jsx_ext_required = 0
 
+" emmet-vim
+" Use emmet only for html and css files
+let g:user_emmet_install_global = 0
+autocmd FileType html,css,jsx,scss,sass,eex EmmetInstall
+
+" vim-gitgutter
+set updatetime=100
+
 " *******
 " Plugins (end)
 " *******
 
 " Use a color scheme
 set background=dark
-colors jellybeans
+color jellybeans
