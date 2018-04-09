@@ -142,12 +142,13 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'airblade/vim-gitgutter'
 
 " Language-specific plugins
-Plug 'elixir-editors/vim-elixir'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+" Plug 'elixir-editors/vim-elixir'
+" Plug 'pangloss/vim-javascript'
+" Plug 'mxw/vim-jsx'
+" Plug 'ap/vim-css-color'
+" Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'mattn/emmet-vim'
-Plug 'ap/vim-css-color'
-Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
