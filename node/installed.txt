@@ -1,0 +1,8 @@
+create-react-app
+eslint
+gatsby
+live-server
+nodemon
+npm
+stylelint
+yarn

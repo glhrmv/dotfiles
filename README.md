@@ -13,3 +13,17 @@ Use `brew bundle dump` to dump installed formulae into a `Brewfile`.
 The `.vimrc` file should automatically download 
 [`vim-plug`](https://github.com/junegunn/vim-plug/) 
 and install the listed plugins.
+
+## node
+
+The `node/` folder contains 2 little bash scripts: 
+`npm_export.sh` and `npm_import.sh`. 
+
+To export your globally installed NPM packages into a text file, do
+```
+./npm_export.sh
+```
+To globally install NPM packages listed in a text file, do
+```
+./npm_import.sh
+```
