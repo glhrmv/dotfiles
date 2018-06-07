@@ -6,7 +6,7 @@
 alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Clean up Homebrew cache and unused versions
-alias cleanupbrew="brew update && brew upgrade && brew cleanup && brew prune; brew doctor"
+alias cleanupbrew="brew update && brew upgrade && brew cleanup && brew prune && brew cask upgrade && brew cask cleanup; brew doctor"
 
 # *******
 # Functions
@@ -37,6 +37,7 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 # *******
 # Prompt
 # *******
+
 export PS1="\[\e[0;37m\]\u \[\e[0;37m\]@ \[\e[0;37m\]\h \[\e[0;37m\][\[\e[0;32m\]\w\[\e[0;37m\]]\[\e[0;33m\]\$(parse_git_branch)\[\e[0;37m\] \[\e[0m\]"
 
 # *******
