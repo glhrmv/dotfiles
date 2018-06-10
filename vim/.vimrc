@@ -6,12 +6,17 @@ if has('gui_running')
   " If we're on a graphical user interface,
   " Set a font at specific size
   set guifont=Hack:h12
+
   " Disable left and right scrollbars
   set guioptions=
 else
   " If we're in the terminal,
   " Enable true colour support
-  set term=screen-256color
+  set term=xterm-256color
+  set termguicolors
+
+  set t_8b=[48;2;%lu;%lu;%lum
+  set t_8f=[38;2;%lu;%lu;%lum
 endif
 
 " Set leader key to ,
@@ -30,17 +35,13 @@ set number
 set mouse=a
 set ttymouse=xterm2
 
+" Set encoding
+set encoding=UTF-8
+
 " Folding
 set foldmethod=syntax
 set foldlevel=1
 set foldnestmax=1
-
-" Split pane navigation
-" Using Ctrl + vim direction
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
 
 " Highlight cursor line
 set cursorline
@@ -106,6 +107,29 @@ set sessionoptions-=options
 " *******
 
 " *******
+" Remappings (start)
+" *******
+
+" Split pane navigation
+" Using Ctrl + vim direction
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Single line bubbling
+nmap <C-Up> [e
+nmap <C-Down> ]e
+
+" Multiple line bubbling
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+
+" *******
+" Remappings (end)
+" *******
+
+" *******
 " Plugins (start)
 " *******
 
@@ -118,10 +142,6 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-" Colorschemes
-Plug 'morhetz/gruvbox'
-Plug 'nanotech/jellybeans.vim'
-
 " General plugins
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
@@ -129,26 +149,29 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'vim-scripts/a.vim'
-Plug 'ervandew/supertab'
-Plug 'qpkorr/vim-renamer'
 Plug 'rstacruz/vim-closer'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'ludovicchabant/vim-gutentags'
+Plug 'tpope/vim-unimpaired'
 Plug 'airblade/vim-gitgutter'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'vim-scripts/a.vim'
+Plug 'qpkorr/vim-renamer'
+Plug 'editorconfig/editorconfig-vim'
 
-" Language-specific plugins
-" Plug 'elixir-editors/vim-elixir'
-" Plug 'pangloss/vim-javascript'
-" Plug 'mxw/vim-jsx'
-" Plug 'ap/vim-css-color'
-" Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'mattn/emmet-vim'
+" Language-related plugins
 Plug 'sheerun/vim-polyglot'
+Plug 'mattn/emmet-vim'
+Plug 'ap/vim-css-color'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'styled-components/vim-styled-components'
+Plug 'prettier/vim-prettier'
+
+" Colorschemes
+Plug 'morhetz/gruvbox'
+Plug 'nanotech/jellybeans.vim'
 
 call plug#end()
 
@@ -160,18 +183,35 @@ let g:airline_powerline_fonts = 1
 " NERDTree
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
+
+" ctrlp
+" Use ctrlp for searching tags
+let g:ctrlp_extensions = ['tag']
+" Ignore certain files & folders
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
+" ALE
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\}
+
+" vim-gitgutter
+" Automatically update every 300ms
+set updatetime=300
 
 " vim-jsx
+" Use vim-jsx on regular .js files
 let g:jsx_ext_required = 0
 
 " emmet-vim
-" Use emmet only for html and css files
+" Use Emmet only for html and css files
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,jsx,scss,sass,eex EmmetInstall
-
-" vim-gitgutter
-set updatetime=100
+let g:user_emmet_settings = {
+  \  'javascript.jsx' : {
+    \      'extends' : 'jsx',
+    \  },
+  \}
 
 " *******
 " Plugins (end)
@@ -179,4 +219,4 @@ set updatetime=100
 
 " Use a color scheme
 set background=dark
-color jellybeans
+colorscheme jellybeans
