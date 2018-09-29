@@ -1,3 +1,12 @@
+" ******************
+"         _
+"  _   __(_)___ ___
+" | | / / / __ `__ \
+" | |/ / / / / / / /
+" |___/_/_/ /_/ /_/
+"
+" ******************
+
 " *******
 " Core settings (start)
 " *******
@@ -5,7 +14,7 @@
 if has('gui_running')
   " If we're on a graphical user interface,
   " Set a font at specific size
-  set guifont=Hack:h12
+  set guifont=Menlo:h12
 
   " Disable left and right scrollbars
   set guioptions=
@@ -107,6 +116,23 @@ set sessionoptions-=options
 " *******
 
 " *******
+" Functions (start)
+" *******
+
+" Command to trim trailing whitespace
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
+command! TrimWhitespace call TrimWhitespace()
+
+" *******
+" Functions (end)
+" *******
+
+" *******
 " Remappings (start)
 " *******
 
@@ -145,9 +171,10 @@ call plug#begin('~/.vim/plugged')
 " General plugins
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
+Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'w0rp/ale'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'rstacruz/vim-closer'
 Plug 'tpope/vim-endwise'
@@ -159,19 +186,17 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'vim-scripts/a.vim'
 Plug 'qpkorr/vim-renamer'
-Plug 'editorconfig/editorconfig-vim'
 
 " Language-related plugins
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'ap/vim-css-color'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'styled-components/vim-styled-components'
 Plug 'prettier/vim-prettier'
 
 " Colorschemes
-Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
+Plug 'crusoexia/vim-monokai'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 

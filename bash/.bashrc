@@ -1,3 +1,12 @@
+# *************************
+#     __               __
+#    / /_  ____ ______/ /_
+#   / __ \/ __ `/ ___/ __ \
+#  / /_/ / /_/ (__  ) / / /
+# /_.___/\__,_/____/_/ /_/
+#
+# *************************
+
 # *******
 # Aliases
 # *******
@@ -6,7 +15,10 @@
 alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Clean up Homebrew cache and unused versions
-alias cleanupbrew="brew update && brew upgrade && brew cleanup && brew prune && brew cask upgrade && brew cask cleanup; brew doctor"
+alias cleanupbrew="brew update && brew upgrade && brew cleanup && brew prune; brew doctor"
+
+# Alias Python 3 to py
+alias py=python3
 
 # *******
 # Functions
@@ -37,7 +49,6 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 # *******
 # Prompt
 # *******
-
 export PS1="\[\e[0;37m\]\u \[\e[0;37m\]@ \[\e[0;37m\]\h \[\e[0;37m\][\[\e[0;32m\]\w\[\e[0;37m\]]\[\e[0;33m\]\$(parse_git_branch)\[\e[0;37m\] \[\e[0m\]"
 
 # *******
@@ -46,8 +57,7 @@ export PS1="\[\e[0;37m\]\u \[\e[0;37m\]@ \[\e[0;37m\]\h \[\e[0;37m\][\[\e[0;32m\
 
 # Start tmux on every shell login
 if which tmux >/dev/null 2>&1; then
-  # if not inside a tmux session, and if no session 
+  # if not inside a tmux session, and if no session
   # is started, start a new session
   test -z "$TMUX" && (tmux attach || tmux new -s default)
 fi
-
