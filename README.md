@@ -3,7 +3,7 @@
 These are my dotfiles. I'll have an install script here, eventually.
 I'm not very good at this yet.
 
-# import_dotfiles.sh
+### import_dotfiles.sh
 
 Run `/.import_dotfiles.sh` to copy updated dotfiles into this repo.
 
