@@ -8,8 +8,9 @@
 " ******************
 
 " *******
-" Core settings (start)
+" Core
 " *******
+" {{{
 
 if has('gui_running')
   " If we're on a graphical user interface,
@@ -111,13 +112,12 @@ endif
 
 set sessionoptions-=options
 
-" *******
-" Core settings (end)
-" *******
+" }}}
 
 " *******
-" Functions (start)
+" Functions
 " *******
+" {{{
 
 " Command to trim trailing whitespace
 fun! TrimWhitespace()
@@ -128,13 +128,12 @@ endfun
 
 command! TrimWhitespace call TrimWhitespace()
 
-" *******
-" Functions (end)
-" *******
+" }}}
 
 " *******
-" Remappings (start)
+" Key mappings
 " *******
+" {{{
 
 " Split pane navigation
 " Using Ctrl + vim direction
@@ -151,13 +150,12 @@ nmap <C-Down> ]e
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
-" *******
-" Remappings (end)
-" *******
+" }}}
 
 " *******
-" Plugins (start)
+" Plugins
 " *******
+" {{{
 
 " Auto-install vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -172,6 +170,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'w0rp/ale'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'majutsushi/tagbar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'editorconfig/editorconfig-vim'
@@ -183,7 +183,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'airblade/vim-gitgutter'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'vim-scripts/a.vim'
 Plug 'qpkorr/vim-renamer'
 
@@ -197,10 +196,16 @@ Plug 'prettier/vim-prettier'
 Plug 'nanotech/jellybeans.vim'
 Plug 'crusoexia/vim-monokai'
 Plug 'morhetz/gruvbox'
+Plug 'AlessandroYorba/Alduin'
 
 call plug#end()
 
+" }}}
+
+" *******
 " Plugin-specific settings
+" *******
+" {{{
 
 " Airline
 let g:airline_powerline_fonts = 1
@@ -238,10 +243,17 @@ let g:user_emmet_settings = {
     \  },
   \}
 
+" }}}
+
 " *******
-" Plugins (end)
+" Colours
 " *******
+" {{{
 
 " Use a color scheme
 set background=dark
 colorscheme jellybeans
+
+" }}}
+
+" vim: set foldmethod=marker:
