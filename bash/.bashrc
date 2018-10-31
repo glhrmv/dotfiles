@@ -13,7 +13,7 @@
 # {{{
 
 # Set default editor
-export EDITOR="nvim"
+export EDITOR=nvim
 
 # Only show the last 2 directories
 export PROMPT_DIRTRIM=2
@@ -59,9 +59,12 @@ alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
 # Clean up Homebrew cache and unused versions
 alias cleanupbrew="brew update && brew upgrade && brew cleanup && brew prune; brew doctor"
 
-# Shortcuts to edit .vimrc or init.vim
+# Shortcuts to edit dotfiles
 alias vimconfig="$EDITOR ~/.vimrc"
 alias nvimconfig="$EDITOR ~/.config/nvim/init.vim"
+alias bashrconfig="$EDITOR ~/.bashrc"
+alias bashprofileconfig="$EDITOR ~/.bash_profile"
+alias gitconfig="$EDITOR ~/.gitconfig"
 
 # Alias Python 3 to py
 alias py=python3
