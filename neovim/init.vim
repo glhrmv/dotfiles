@@ -26,7 +26,7 @@ set autochdir
 
 " Folding
 set foldmethod=syntax
-set foldlevel=0
+set foldlevel=99
 set foldnestmax=1
 
 " Automatically set screen title
@@ -46,6 +46,11 @@ highlight ColorColumn ctermbg=darkgray
 if !&scrolloff
   set scrolloff=1
 endif
+
+" For conceal markers
+" if has('conceal')
+"   set conceallevel=2 concealcursor=niv
+" endif
 
 " }}}
 
@@ -70,30 +75,21 @@ command! TrimWhitespace call TrimWhitespace()
 " *******
 " {{{
 
-" Fix indentation in file
+" <Leader-f> Fix indentation in file
 map <leader>f mmgg=G`m<CR>
 
-" Split pane navigation
-" using <ctrl-direction>
+" Escape from terminal mode with ESC
+tnoremap <Esc> <C-\><C-n>
+
+" Clear search highlight in normal mode with ESC
+nnoremap <esc> :noh<return><esc>
+nnoremap <esc>^[ <esc>^[
+
+" Split pane navigation using <Ctrl-direction>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-" Single line bubbling
-nmap <C-Up> [e
-nmap <C-Down> ]e
-
-" Multiple line bubbling
-vmap <C-Up> [egv
-vmap <C-Down> ]egv
-
-" Escape to normal mode from terminal mode with ESC
-tnoremap <Esc> <C-\><C-n>
-
-" Clear highlighting on escape in normal mode
-nnoremap <esc> :noh<return><esc>
-nnoremap <esc>^[ <esc>^[
 
 " }}}
 
@@ -129,6 +125,9 @@ Plug 'ludovicchabant/vim-gutentags'
 
 " Ctrl + P
 Plug 'ctrlpvim/ctrlp.vim'
+
+" Goyo
+Plug 'junegunn/goyo.vim'
 
 " Utilities
 Plug 'editorconfig/editorconfig-vim'
@@ -166,6 +165,21 @@ call plug#end()
 
 " deoplete.nvim
 let g:deoplete#enable_at_startup = 1
+
+" neosnippet key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 " NERDTree
 let NERDTreeAutoDeleteBuffer = 1
