@@ -5,7 +5,7 @@ I'm not very good at this yet.
 
 ### import_dotfiles.sh
 
-Run `/.import_dotfiles.sh` to copy updated dotfiles into this repo.
+Run `/.import_dotfiles.sh` to copy updated local dotfiles into this repo.
 
 ## homebrew
 

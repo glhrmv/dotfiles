@@ -4,11 +4,15 @@ FILE=$1
 
 if [ -f "${FILE}" ]; then
   echo "[Ø] Globally installing packages from "$FILE".."
+
   xargs npm install --global < $FILE
+
   echo "[Ø] Done."
+
   exit 0
 else
-  echo "[Ø] You need to give me a file!"
+  echo "[Ø] No file given. (probably installed.txt)"
+
   exit 1
 fi
 
