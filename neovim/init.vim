@@ -78,14 +78,14 @@ command! TrimWhitespace call TrimWhitespace()
 " <Leader-f> Fix indentation in file
 map <leader>f mmgg=G`m<CR>
 
-" Escape from terminal mode with ESC
+" <Esc> Escape from terminal mode
 tnoremap <Esc> <C-\><C-n>
 
-" Clear search highlight in normal mode with ESC
+" <Esc> Clear search highlight in normal mode
 nnoremap <esc> :noh<return><esc>
 nnoremap <esc>^[ <esc>^[
 
-" Split pane navigation using <Ctrl-direction>
+" <Ctrl-direction> Split pane navigation using
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -102,36 +102,40 @@ nnoremap <C-H> <C-W><C-H>
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-" Autocomplete and snippets
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
-
-" Airline
+" airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Asynchronous linting engine
+" deoplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+" neosnippet
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
+
+" ale
 Plug 'w0rp/ale'
 
-" File explorer
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" ctrlp
+Plug 'ctrlpvim/ctrlp.vim'
 
-" Tag explorer
-Plug 'majutsushi/tagbar'
+" NERDTree file explorer
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 " Gutentags
 Plug 'ludovicchabant/vim-gutentags'
 
-" Ctrl + P
-Plug 'ctrlpvim/ctrlp.vim'
+" Tag explorer
+Plug 'majutsushi/tagbar'
+
+" Commentary
+Plug 'tpope/vim-commentary'
 
 " Goyo
 Plug 'junegunn/goyo.vim'
 
 " Utilities
 Plug 'editorconfig/editorconfig-vim'
-Plug 'scrooloose/nerdcommenter'
 Plug 'rstacruz/vim-closer'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
@@ -153,6 +157,9 @@ Plug 'morhetz/gruvbox'
 Plug 'AlessandroYorba/Alduin'
 Plug 'danilo-augusto/vim-afterglow'
 Plug 'jacoborus/tender.vim'
+Plug 'rakr/vim-one'
+Plug 'reedes/vim-colors-pencil'
+Plug 'ayu-theme/ayu-vim'
 
 call plug#end()
 
@@ -174,27 +181,27 @@ xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 " SuperTab like snippets behavior.
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+imap <expr><TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ neosnippet#expandable_or_jumpable() ?
+      \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+      \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 " NERDTree
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
+
+" ALE
+let g:ale_fixers = {
+      \   'javascript': ['eslint'],
+      \}
 
 " ctrlp
 " Use ctrlp for searching tags
 let g:ctrlp_extensions = ['tag']
 " Ignore certain files & folders
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-
-" ALE
-let g:ale_fixers = {
-      \   'javascript': ['eslint'],
-      \}
 
 " vim-gitgutter
 " Automatically update every 300ms
@@ -221,8 +228,9 @@ let g:user_emmet_settings = {
 " *******
 " {{{
 
-colorscheme alduin
+set background=dark
 let g:airline_theme='alduin'
+colorscheme alduin
 
 " }}}
 
