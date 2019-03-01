@@ -4,3 +4,5 @@
 
 [github]
   user = glhrmv
+[core]
+	excludesfile = /Users/gui/.gitignore_global

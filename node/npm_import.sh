@@ -2,7 +2,8 @@
 
 FILE=$1
 
-if [ -f "${FILE}" ]; then
+if [[ -e $FILE ]]
+then
   echo "[Ø] Globally installing packages from "$FILE".."
 
   xargs npm install --global < $FILE

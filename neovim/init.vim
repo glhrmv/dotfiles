@@ -1,22 +1,21 @@
 " *******
 " Core
 " *******
-" {{{
+" {{{ 
+" Set leader key to <,>
+let mapleader=","
 
 " Enable true colours
 set termguicolors
 
-" Set leader key to <,>
-let mapleader=","
-
 " 2 space indentation
 set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
-" Share system and vim clipboard
-set clipboard+=unnamedplus
-
 " Show line numbers
 set number
+
+" Share system and vim clipboard
+set clipboard+=unnamedplus
 
 " Enable use of the mouse
 set mouse=a
@@ -39,7 +38,7 @@ set hidden
 set cursorline
 
 " Highlight column 90
-set colorcolumn=90
+set colorcolumn=100
 highlight ColorColumn ctermbg=darkgray
 
 " Minimum number of screen lines to keep above and below the cursor
@@ -47,10 +46,9 @@ if !&scrolloff
   set scrolloff=1
 endif
 
-" For conceal markers
-" if has('conceal')
-"   set conceallevel=2 concealcursor=niv
-" endif
+" Autocompletion
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
 
 " }}}
 
@@ -71,12 +69,12 @@ command! TrimWhitespace call TrimWhitespace()
 " }}}
 
 " *******
-" Key mappings
+" Key remappings
 " *******
 " {{{
 
-" <Leader-f> Fix indentation in file
-map <leader>f mmgg=G`m<CR>
+" <Leader><i> Fix indentation in file
+map <leader>i mmgg=G`m<CR>
 
 " <Esc> Escape from terminal mode
 tnoremap <Esc> <C-\><C-n>
@@ -85,11 +83,11 @@ tnoremap <Esc> <C-\><C-n>
 nnoremap <esc> :noh<return><esc>
 nnoremap <esc>^[ <esc>^[
 
-" <Ctrl-direction> Split pane navigation using
+" <Ctrl+direction> Split pane navigation
+nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
 
 " }}}
 
@@ -98,128 +96,136 @@ nnoremap <C-H> <C-W><C-H>
 " *******
 " {{{
 
+" vim-plug -- https://github.com/junegunn/vim-plug
 " Install plugins with :PlugInstall
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-" airline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-" deoplete
+" deoplete (autocomplete)
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
-" neosnippet
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
+" File explorer
+Plug 'scrooloose/nerdtree'
 
-" ale
+" ALE (Asynchronous Linting Engine)
 Plug 'w0rp/ale'
 
-" ctrlp
+" CtrlP
 Plug 'ctrlpvim/ctrlp.vim'
 
-" NERDTree file explorer
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" Status line
+ Plug 'itchyny/lightline.vim'
 
-" Gutentags
-Plug 'ludovicchabant/vim-gutentags'
+" Version control
+" Git
+Plug 'tpope/vim-fugitive'
+" Show diffs
+Plug 'mhinz/vim-signify'
 
-" Tag explorer
+" Tag explorer (:TagBar to see tags for current file)
 Plug 'majutsushi/tagbar'
 
-" Commentary
+" Commentary (gcc to toggle comment on line, gc on visual selection)
 Plug 'tpope/vim-commentary'
 
-" Goyo
-Plug 'junegunn/goyo.vim'
+" Editorconfig
+Plug 'editorconfig/editorconfig-vim'
+
+" Languages-related plugins
+" Ctags
+Plug 'ludovicchabant/vim-gutentags'
+" Elixir
+Plug 'elixir-editors/vim-elixir'
+Plug 'slashmili/alchemist.vim'
+Plug 'mmorearty/elixir-ctags'
+" Emmet (HTML)
+Plug 'mattn/emmet-vim'
+" CSS
+Plug 'ap/vim-css-color'
+" Vue
+Plug 'posva/vim-vue'
 
 " Utilities
-Plug 'editorconfig/editorconfig-vim'
 Plug 'rstacruz/vim-closer'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
-Plug 'airblade/vim-gitgutter'
 Plug 'vim-scripts/a.vim'
 Plug 'qpkorr/vim-renamer'
 
-" Language-related plugins
-Plug 'sheerun/vim-polyglot'
-Plug 'mattn/emmet-vim'
-Plug 'ap/vim-css-color'
-Plug 'prettier/vim-prettier'
-
-" Colour schemes
-Plug 'nanotech/jellybeans.vim'
+" Colours
+Plug 'w0ng/vim-hybrid'
+Plug 'cocopon/lightline-hybrid.vim'
 Plug 'morhetz/gruvbox'
 Plug 'AlessandroYorba/Alduin'
-Plug 'danilo-augusto/vim-afterglow'
-Plug 'jacoborus/tender.vim'
 Plug 'rakr/vim-one'
-Plug 'reedes/vim-colors-pencil'
-Plug 'ayu-theme/ayu-vim'
 
 call plug#end()
 
 " }}}
 
 " *******
-" Plugin-specific settings
+" Plugin settings
 " *******
 " {{{
 
-" deoplete.nvim
+" *******
+" deoplete
+" *******
+" Enable deoplete
 let g:deoplete#enable_at_startup = 1
 
-" neosnippet key-mappings.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <expr><TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ neosnippet#expandable_or_jumpable() ?
-      \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
+" *******
 " NERDTree
+" *******
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
 
+" *******
 " ALE
-let g:ale_fixers = {
-      \   'javascript': ['eslint'],
+" *******
+" Configure ALE fixers
+let b:ale_fixers = {
+      \'javascript':
+      \['prettier', 'eslint']
       \}
 
-" ctrlp
-" Use ctrlp for searching tags
+" Ignore config warning if no eslintrc file present
+let g:ale_javascript_eslint_suppress_missing_config = 1
+
+" *******
+" CtrlP
+" *******
+" Search tags
 let g:ctrlp_extensions = ['tag']
 " Ignore certain files & folders
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore = 'node_modules\|deps\|_build\|DS_Store\|git$'
 
-" vim-gitgutter
-" Automatically update every 300ms
-set updatetime=300
+" *******
+" lightline
+" *******
+let g:lightline = {}
+let g:lightline.colorscheme = 'hybrid'
 
-" vim-jsx
-" Use vim-jsx on regular .js files
-let g:jsx_ext_required = 0
+" *******
+" signify
+" *******
+let g:signify_vcs_list = [ 'git', 'svn' ]
 
-" emmet-vim
-" Use Emmet only for html and css files
-let g:user_emmet_install_global = 0
+" *******
+" emmet
+" *******
+" Trigger emmet with <Leader>,
+let g:user_emmet_leader_key=','
+" Define which file types to use emmet with
 autocmd FileType html,css,jsx,scss,sass,eex EmmetInstall
-let g:user_emmet_settings = {
-      \  'javascript.jsx' : {
-      \      'extends' : 'jsx',
-      \  },
-      \}
+
+" }}}
+
+" *******
+" Language servers registry
+" *******
+" {{{
 
 " }}}
 
@@ -229,8 +235,7 @@ let g:user_emmet_settings = {
 " {{{
 
 set background=dark
-let g:airline_theme='alduin'
-colorscheme alduin
+colorscheme hybrid
 
 " }}}
 

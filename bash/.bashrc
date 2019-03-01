@@ -12,6 +12,9 @@
 # *******
 # {{{
 
+# Edit the PATH
+export PATH="$PATH:~/Google Drive/feup/3/COMP/javacc-6.0/bin"
+
 # Set default editor
 export EDITOR=nvim
 
@@ -57,7 +60,7 @@ export PS1="\[\e[0;37m\]\u \[\e[0;37m\]@ \[\e[0;37m\]\h \[\e[0;37m\][\[\e[0;32m\
 alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Clean up Homebrew cache and unused versions
-alias cleanupbrew="brew update && brew upgrade && brew cleanup && brew prune; brew doctor"
+alias cleanupbrew="brew update && brew upgrade && brew cleanup; brew doctor"
 
 # Shortcuts to edit dotfiles
 alias vimconfig="$EDITOR ~/.vimrc"
@@ -66,15 +69,16 @@ alias bashrconfig="$EDITOR ~/.bashrc"
 alias bashprofileconfig="$EDITOR ~/.bash_profile"
 alias gitconfig="$EDITOR ~/.gitconfig"
 
-# Alias Python 3 to py
-alias py=python3
-
 # }}}
 
 # *******
 # Other
 # *******
 # {{{
+
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
 
 # Start tmux on every shell login
 if which tmux >/dev/null 2>&1; then
