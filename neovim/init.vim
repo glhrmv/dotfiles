@@ -101,9 +101,6 @@ nnoremap <C-L> <C-W><C-L>
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-" deoplete (autocomplete)
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-
 " File explorer
 Plug 'scrooloose/nerdtree'
 
@@ -113,12 +110,7 @@ Plug 'w0rp/ale'
 " CtrlP
 Plug 'ctrlpvim/ctrlp.vim'
 
-" Status line
- Plug 'itchyny/lightline.vim'
-
 " Version control
-" Git
-Plug 'tpope/vim-fugitive'
 " Show diffs
 Plug 'mhinz/vim-signify'
 
@@ -128,22 +120,15 @@ Plug 'majutsushi/tagbar'
 " Commentary (gcc to toggle comment on line, gc on visual selection)
 Plug 'tpope/vim-commentary'
 
-" Editorconfig
-Plug 'editorconfig/editorconfig-vim'
-
 " Languages-related plugins
+" Polyglot
+Plug 'sheerun/vim-polyglot'
 " Ctags
 Plug 'ludovicchabant/vim-gutentags'
-" Elixir
-Plug 'elixir-editors/vim-elixir'
-Plug 'slashmili/alchemist.vim'
-Plug 'mmorearty/elixir-ctags'
 " Emmet (HTML)
 Plug 'mattn/emmet-vim'
 " CSS
 Plug 'ap/vim-css-color'
-" Vue
-Plug 'posva/vim-vue'
 
 " Utilities
 Plug 'rstacruz/vim-closer'
@@ -155,10 +140,6 @@ Plug 'qpkorr/vim-renamer'
 
 " Colours
 Plug 'w0ng/vim-hybrid'
-Plug 'cocopon/lightline-hybrid.vim'
-Plug 'morhetz/gruvbox'
-Plug 'AlessandroYorba/Alduin'
-Plug 'rakr/vim-one'
 
 call plug#end()
 
@@ -168,12 +149,6 @@ call plug#end()
 " Plugin settings
 " *******
 " {{{
-
-" *******
-" deoplete
-" *******
-" Enable deoplete
-let g:deoplete#enable_at_startup = 1
 
 " *******
 " NERDTree
@@ -202,12 +177,6 @@ let g:ctrlp_extensions = ['tag']
 let g:ctrlp_custom_ignore = 'node_modules\|deps\|_build\|DS_Store\|git$'
 
 " *******
-" lightline
-" *******
-let g:lightline = {}
-let g:lightline.colorscheme = 'hybrid'
-
-" *******
 " signify
 " *******
 let g:signify_vcs_list = [ 'git', 'svn' ]
@@ -219,13 +188,6 @@ let g:signify_vcs_list = [ 'git', 'svn' ]
 let g:user_emmet_leader_key=','
 " Define which file types to use emmet with
 autocmd FileType html,css,jsx,scss,sass,eex EmmetInstall
-
-" }}}
-
-" *******
-" Language servers registry
-" *******
-" {{{
 
 " }}}
 
