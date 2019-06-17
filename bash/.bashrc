@@ -30,6 +30,8 @@ export CLICOLOR=1
 # (these will likely be overriden by your terminal)
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
+export LC_ALL=en_GB.UTF-8
+
 # }}}
 
 # *******

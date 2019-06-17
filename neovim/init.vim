@@ -114,17 +114,12 @@ Plug 'ctrlpvim/ctrlp.vim'
 " Show diffs
 Plug 'mhinz/vim-signify'
 
-" Tag explorer (:TagBar to see tags for current file)
-Plug 'majutsushi/tagbar'
-
 " Commentary (gcc to toggle comment on line, gc on visual selection)
 Plug 'tpope/vim-commentary'
 
 " Languages-related plugins
 " Polyglot
 Plug 'sheerun/vim-polyglot'
-" Ctags
-Plug 'ludovicchabant/vim-gutentags'
 " Emmet (HTML)
 Plug 'mattn/emmet-vim'
 " CSS
@@ -139,7 +134,7 @@ Plug 'vim-scripts/a.vim'
 Plug 'qpkorr/vim-renamer'
 
 " Colours
-Plug 'w0ng/vim-hybrid'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -171,8 +166,6 @@ let g:ale_javascript_eslint_suppress_missing_config = 1
 " *******
 " CtrlP
 " *******
-" Search tags
-let g:ctrlp_extensions = ['tag']
 " Ignore certain files & folders
 let g:ctrlp_custom_ignore = 'node_modules\|deps\|_build\|DS_Store\|git$'
 
@@ -197,7 +190,7 @@ autocmd FileType html,css,jsx,scss,sass,eex EmmetInstall
 " {{{
 
 set background=dark
-colorscheme hybrid
+colorscheme gruvbox
 
 " }}}
 
