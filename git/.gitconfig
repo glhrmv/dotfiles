@@ -1,8 +1,11 @@
 [user]
   name = glhrmv
-  email = gvm.gui@gmail.com
+  email = gvmgui@gmail.com
 
 [github]
+  user = glhrmv
+
+[gitlab]
   user = glhrmv
 
 [core]

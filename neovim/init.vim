@@ -2,6 +2,7 @@
 " Core
 " *******
 " {{{ 
+
 " Set leader key to <,>
 let mapleader=","
 
@@ -135,6 +136,7 @@ Plug 'qpkorr/vim-renamer'
 
 " Colours
 Plug 'morhetz/gruvbox'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
@@ -159,7 +161,6 @@ let b:ale_fixers = {
       \'javascript':
       \['prettier', 'eslint']
       \}
-
 " Ignore config warning if no eslintrc file present
 let g:ale_javascript_eslint_suppress_missing_config = 1
 
@@ -190,7 +191,7 @@ autocmd FileType html,css,jsx,scss,sass,eex EmmetInstall
 " {{{
 
 set background=dark
-colorscheme gruvbox
+colorscheme onedark
 
 " }}}
 
