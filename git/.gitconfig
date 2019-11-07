@@ -1,6 +1,6 @@
 [user]
-  name = glhrmv
-  email = gvmgui@gmail.com
+  name = Guilherme Vale
+  email = oguilhermevale@gmail.com
 
 [github]
   user = glhrmv
@@ -9,4 +9,6 @@
   user = glhrmv
 
 [core]
-	excludesfile = /Users/gui/.gitignore_global
+  autocrrlf = true
+	excludesfile = ~/.gitignore_global
+

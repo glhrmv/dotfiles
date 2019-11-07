@@ -112,7 +112,6 @@ Plug 'w0rp/ale'
 Plug 'ctrlpvim/ctrlp.vim'
 
 " Version control
-" Show diffs
 Plug 'mhinz/vim-signify'
 
 " Commentary (gcc to toggle comment on line, gc on visual selection)
@@ -171,9 +170,9 @@ let g:ale_javascript_eslint_suppress_missing_config = 1
 let g:ctrlp_custom_ignore = 'node_modules\|deps\|_build\|DS_Store\|git$'
 
 " *******
-" signify
+" vim-signify
 " *******
-let g:signify_vcs_list = [ 'git', 'svn' ]
+set updatetime=300
 
 " *******
 " emmet
@@ -191,7 +190,7 @@ autocmd FileType html,css,jsx,scss,sass,eex EmmetInstall
 " {{{
 
 set background=dark
-colorscheme onedark
+colorscheme gruvbox
 
 " }}}
 
