@@ -47,10 +47,6 @@ if !&scrolloff
   set scrolloff=1
 endif
 
-" Autocompletion
-filetype plugin on
-set omnifunc=syntaxcomplete#Complete
-
 " }}}
 
 " *******
@@ -105,19 +101,17 @@ call plug#begin('~/.local/share/nvim/plugged')
 " File explorer
 Plug 'scrooloose/nerdtree'
 
-" ALE (Asynchronous Linting Engine)
-Plug 'w0rp/ale'
-
 " CtrlP
 Plug 'ctrlpvim/ctrlp.vim'
 
-" Version control
+" Signify (Version control)
 Plug 'mhinz/vim-signify'
 
-" Commentary (gcc to toggle comment on line, gc on visual selection)
+" Commentary 
+" gcc to toggle comment on line,
+" gc on visual selection)
 Plug 'tpope/vim-commentary'
 
-" Languages-related plugins
 " Polyglot
 Plug 'sheerun/vim-polyglot'
 " Emmet (HTML)
@@ -135,7 +129,6 @@ Plug 'qpkorr/vim-renamer'
 
 " Colours
 Plug 'morhetz/gruvbox'
-Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
@@ -151,17 +144,6 @@ call plug#end()
 " *******
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeMinimalUI = 1
-
-" *******
-" ALE
-" *******
-" Configure ALE fixers
-let b:ale_fixers = {
-      \'javascript':
-      \['prettier', 'eslint']
-      \}
-" Ignore config warning if no eslintrc file present
-let g:ale_javascript_eslint_suppress_missing_config = 1
 
 " *******
 " CtrlP
