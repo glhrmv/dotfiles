@@ -1,9 +1,0 @@
-create-react-app
-eslint
-gatsby
-live-server
-neovim
-nodemon
-npm
-prettier
-yarn
