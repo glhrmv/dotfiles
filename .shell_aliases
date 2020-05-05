@@ -2,12 +2,8 @@
 alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Clean up Homebrew cache and unused versions
-alias cleanupbrew="brew update && brew upgrade && brew cleanup; brew doctor"
+alias cleanupbrew='brew update && brew upgrade && brew cleanup; brew doctor'
 
-# Shortcuts to edit dotfiles
-alias vimconfig="$EDITOR ~/.vimrc"
-alias nvimconfig="$EDITOR ~/.config/nvim/init.vim"
-alias bashrcconfig="$EDITOR ~/.bashrc"
-alias bashprofileconfig="$EDITOR ~/.bash_profile"
-alias gitconfig="$EDITOR ~/.gitconfig"
-alias tmuxconfig="$EDITOR ~/.tmux.conf"
+# Alias configs
+alias aliasconfig='$EDITOR ~/.shell_aliases'
+alias gitconfig='$EDITOR ~/.gitconfig'
