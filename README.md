@@ -2,6 +2,6 @@
 
 These are my dotfiles. I'll have an install script here, eventually.
 
-### update_dotfiles.sh
+## Usage
 
-Run `/.update_dotfiles.sh` to copy local dotfiles into this repo.
+Run `bootstrap.sh` on a brand new macOS installation to set up your environment.
