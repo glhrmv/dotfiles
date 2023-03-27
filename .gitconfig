@@ -10,5 +10,5 @@
 
 [core]
   autocrrlf = true
-	excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore_global
 

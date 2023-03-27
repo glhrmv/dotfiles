@@ -1,7 +1,9 @@
 # dotfiles
 
-These are my dotfiles. I'll have an install script here, eventually.
+These are my dotfiles. 
 
 ## Usage
 
-Run `bootstrap.sh` on a brand new macOS installation to set up your environment.
+Run `bootstrap.sh`. 
+
+Only tested on macOS, use on other Unix systems at your own risk.
