@@ -1,9 +1,0 @@
-# Remove .DS_Store files in pwd and all subdirectories
-alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
-
-# Clean up Homebrew cache and unused versions
-alias cleanupbrew='brew update && brew upgrade && brew cleanup; brew doctor'
-
-# Alias configs
-alias aliasconfig='$EDITOR ~/.shell_aliases'
-alias gitconfig='$EDITOR ~/.gitconfig'

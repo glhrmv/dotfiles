@@ -86,8 +86,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 
-" }}}
-
 " *******
 " Plugins
 " *******
@@ -97,9 +95,6 @@ nnoremap <C-L> <C-W><C-L>
 " Install plugins with :PlugInstall
 
 call plug#begin('~/.local/share/nvim/plugged')
-
-" File explorer
-Plug 'scrooloose/nerdtree'
 
 " CtrlP
 Plug 'ctrlpvim/ctrlp.vim'
@@ -116,8 +111,6 @@ Plug 'tpope/vim-commentary'
 Plug 'sheerun/vim-polyglot'
 " Emmet (HTML)
 Plug 'mattn/emmet-vim'
-" CSS
-Plug 'ap/vim-css-color'
 
 " Utilities
 Plug 'rstacruz/vim-closer'
@@ -140,12 +133,6 @@ call plug#end()
 " {{{
 
 " *******
-" NERDTree
-" *******
-let NERDTreeAutoDeleteBuffer = 1
-let NERDTreeMinimalUI = 1
-
-" *******
 " CtrlP
 " *******
 " Ignore certain files & folders
@@ -162,7 +149,9 @@ set updatetime=300
 " Trigger emmet with <Leader>,
 let g:user_emmet_leader_key=','
 " Define which file types to use emmet with
-autocmd FileType html,css,jsx,scss,sass,eex EmmetInstall
+autocmd FileType html,css,jsx,scss,sass EmmetInstall
+
+" }}}
 
 " }}}
 
@@ -177,3 +166,4 @@ colorscheme gruvbox
 " }}}
 
 " vim: set foldmethod=marker:
+
