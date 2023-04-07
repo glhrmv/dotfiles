@@ -10,13 +10,15 @@ echo "-------------------------------------------------";
 echo "";
 
 installSoftware() {
-  # Install zsh and required software
   echo "[Ø] [INFO] Installing dependencies...";
-  brew install coreutils gpg gnupg automake autoconf openssl libyaml readline libxslt
+  brew bundle
 
-  # Install Oh My Zsh!
   echo "[Ø] [INFO] Installing Oh My Zsh...";
   curl -L http://install.ohmyz.sh
+
+  echo "[Ø] [INFO] Installing vim-plug...";
+  sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 }
 
 installBrew() {
