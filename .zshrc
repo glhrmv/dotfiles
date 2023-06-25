@@ -4,7 +4,7 @@ ZSH_THEME="arrow"
 
 zstyle ':omz:update' mode reminder
 
-plugins=(git z asdf)
+plugins=(git z asdf zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 

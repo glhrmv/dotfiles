@@ -15,6 +15,7 @@ installSoftware() {
 
   echo "[Ø] [INFO] Installing Oh My Zsh...";
   curl -L http://install.ohmyz.sh
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
   echo "[Ø] [INFO] Installing vim-plug...";
   sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
