@@ -1,7 +1,7 @@
 [user]
   name = {{ .name }}
   email = {{ .email }}
-  signingkey = {{ .signing_key }}
+  signingkey = ~/.ssh/id_ed25519.pub
 
 [github]
   user = {{ .github_user }}
@@ -12,11 +12,15 @@
   editor = hx
 
 [gpg]
-  program = {{ output "brew" "--prefix" | trim }}/bin/gpg
+  format = ssh
 
 [commit]
-  gpgsign = {{ if .is_work }}false{{ else }}true{{ end }}
+  gpgsign = true
+
+[tag]
+  gpgsign = true
+
 {{ if .is_work }}
-[includeIf "gitdir:~/personal/"]
+[includeIf "gitdir:{{ .personal_dir }}/"]
   path = ~/.gitconfig-personal
 {{ end }}

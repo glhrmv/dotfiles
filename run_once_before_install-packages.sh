@@ -5,4 +5,4 @@ if ! command -v brew &>/dev/null; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-brew bundle --file="$HOME/.local/share/chezmoi/Brewfile" --no-lock
+brew bundle --file="$HOME/.local/share/chezmoi/Brewfile"
