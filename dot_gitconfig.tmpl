@@ -1,0 +1,18 @@
+[user]
+  name = {{ .name }}
+  email = {{ .email }}
+  signingkey = {{ .signing_key }}
+
+[github]
+  user = {{ .github_user }}
+
+[core]
+  autocrrlf = true
+  excludesfile = ~/.gitignore_global
+  editor = hx
+
+[gpg]
+  program = {{ output "brew" "--prefix" | trim }}/bin/gpg
+
+[commit]
+  gpgsign = false
