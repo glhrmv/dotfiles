@@ -1,0 +1,5 @@
+[user]
+  email = {{ .personal_email }}
+
+[commit]
+  gpgsign = true

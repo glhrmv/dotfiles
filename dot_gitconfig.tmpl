@@ -15,4 +15,8 @@
   program = {{ output "brew" "--prefix" | trim }}/bin/gpg
 
 [commit]
-  gpgsign = false
+  gpgsign = {{ if .is_work }}false{{ else }}true{{ end }}
+{{ if .is_work }}
+[includeIf "gitdir:~/personal/"]
+  path = ~/.gitconfig-personal
+{{ end }}
