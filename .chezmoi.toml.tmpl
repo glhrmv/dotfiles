@@ -2,9 +2,11 @@
 {{- $email := promptStringOnce . "email" "Git email" -}}
 {{- $githubUser := promptStringOnce . "github_user" "GitHub username" -}}
 {{- $signingKey := promptStringOnce . "signing_key" "GPG signing key fingerprint (leave blank if none)" -}}
+{{- $context7ApiKey := promptStringOnce . "context7_api_key" "Context7 API key" -}}
 
 [data]
   name = {{ $name | quote }}
   email = {{ $email | quote }}
   github_user = {{ $githubUser | quote }}
   signing_key = {{ $signingKey | quote }}
+  context7_api_key = {{ $context7ApiKey | quote }}
