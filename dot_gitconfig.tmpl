@@ -7,7 +7,6 @@
   user = {{ .github_user }}
 
 [core]
-  autocrrlf = true
   excludesfile = ~/.gitignore_global
   editor = hx
 
@@ -21,6 +20,6 @@
   gpgsign = true
 
 {{ if .is_work }}
-[includeIf "gitdir:{{ .personal_dir }}/"]
-  path = ~/.gitconfig-personal
+[includeIf "gitdir:{{ .work_dir }}"]
+  path = ~/.gitconfig.work
 {{ end }}

@@ -1,3 +1,5 @@
+Brewfile
+
 {{ if not .is_work }}
-.gitconfig-personal
+.gitconfig.work
 {{ end }}
