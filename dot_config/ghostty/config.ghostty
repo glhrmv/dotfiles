@@ -1,0 +1,4 @@
+theme = dark:Gruvbox Dark,light:Gruvbox Light
+font-family = "Maple Mono NF"
+
+shell-integration-features=sudo
