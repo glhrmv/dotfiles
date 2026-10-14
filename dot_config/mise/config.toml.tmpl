@@ -1,10 +1,19 @@
 [tools]
 aws = { version = "latest", symlink_bins = "true" }
+chezmoi = "latest"
 colima = "latest"
+delta = "latest"
 docker-cli = "latest"
+{{- if .is_work }}
+glab = "latest"
+{{- end }}
+helix = "latest"
 herdr = "latest"
+lazygit = "latest"
 lima = "latest"
 node = "latest"
 rclone = "latest"
 rtk = "latest"
+starship = "latest"
 uv = "latest"
+zoxide = "latest"
