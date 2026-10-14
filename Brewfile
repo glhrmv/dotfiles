@@ -1,17 +1,17 @@
 # Plugin manager for zsh, inspired by antigen and antibody
 brew "antidote"
-# Automatic configure script builder
-brew "autoconf"
+# Syntax-highlighting pager for git, diff, and grep output
+brew "git-delta"
 # Manage your dotfiles across multiple diverse machines, securely
 brew "chezmoi"
 # Post-modern modal text editor
 brew "helix"
+# Simple terminal UI for git commands
+brew "lazygit"
 # Polyglot runtime manager
 brew "mise"
 # Deep clean and optimize your Mac
 brew "mole"
-# CLI proxy to minimize LLM token consumption
-brew "rtk"
 # Cross-shell prompt for astronauts
 brew "starship"
 # Shell extension to navigate your filesystem faster
@@ -30,6 +30,8 @@ cask "iina"
 cask "orion"
 # Music streaming service
 cask "spotify"
+# Database client
+cask "tablepro"
 # Unpacks archive files
 cask "the-unarchiver"
 # Native desktop client for WhatsApp

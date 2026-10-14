@@ -1,4 +1,6 @@
 Brewfile
+Brewfile.work
+README.md
 
 {{ if not .is_work }}
 .gitconfig.work

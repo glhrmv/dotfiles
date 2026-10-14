@@ -7,15 +7,42 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always"
+          }
+        },
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always"
+          }
+        }
+      },
+      "enable_lsp_tasks": true
+    }
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+    "anthropic_retention": false
+  },
   "cli_default_open_behavior": "new_window",
   "agent_servers": {
     "claude-acp": {
+      "default_config_options": {
+        "effort": "medium",
+        "mode": "auto",
+        "model": "default"
+      },
       "type": "registry"
     }
   },
   "proxy": "",
   "outline_panel": {
-    "dock": "left"
+    "dock": "right"
   },
   "format_on_save": "off",
   "show_whitespaces": "boundary",
@@ -46,7 +73,7 @@
     "dock": "bottom",
   },
   "collaboration_panel": {
-    "dock": "left",
+    "dock": "right",
   },
   "resize_all_panels_in_dock": ["left", "bottom", "right"],
   "project_panel": {

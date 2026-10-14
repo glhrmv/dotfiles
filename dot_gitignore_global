@@ -19,3 +19,6 @@ log/
 *.log
 
 # etc...
+
+# Claude Code
+**/.claude/settings.local.json

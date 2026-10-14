@@ -2,6 +2,8 @@
 
 When responding in English, write in British English.
 
+Never add a "Co-Authored-By: Claude..." trailer (or similar attribution) to git commits. Commit as the user only.
+
 @RTK.md
 
 # Action guidelines

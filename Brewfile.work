@@ -1,0 +1,5 @@
+# GitLab CLI
+brew "glab"
+
+cask "microsoft-teams"
+cask "slack"

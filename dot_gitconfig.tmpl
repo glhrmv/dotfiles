@@ -10,6 +10,14 @@
   excludesfile = ~/.gitignore_global
   editor = hx
   autocrlf = input
+  pager = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  side-by-side = true
+  navigate = true
 
 [gpg]
   format = ssh
@@ -21,6 +29,9 @@
   gpgsign = true
 
 {{ if .is_work }}
-[includeIf "gitdir:{{ .work_dir }}"]
+[includeIf "gitdir:{{ .work_dir }}/"]
   path = ~/.gitconfig.work
+
+[gitlab]
+  user = Guilherme.Vale
 {{ end }}

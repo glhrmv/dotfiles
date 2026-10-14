@@ -1,0 +1,5 @@
+eval "$(/opt/homebrew/bin/brew shellenv)"
+{{- if .is_work }}
+# Managed by Review Desktop: review command PATH. Do not edit.
+export PATH="$HOME/.local/bin:$PATH"
+{{- end }}

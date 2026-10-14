@@ -1,0 +1,10 @@
+[tools]
+aws = { version = "latest", symlink_bins = "true" }
+colima = "latest"
+docker-cli = "latest"
+herdr = "latest"
+lima = "latest"
+node = "latest"
+rclone = "latest"
+rtk = "latest"
+uv = "latest"
