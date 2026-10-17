@@ -1,5 +1,7 @@
 [tools]
+{{- if .is_work }}
 aws = { version = "latest", symlink_bins = "true" }
+{{- end }}
 chezmoi = "latest"
 colima = "latest"
 delta = "latest"
