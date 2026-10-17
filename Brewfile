@@ -2,8 +2,6 @@
 brew "antidote"
 # Polyglot runtime manager
 brew "mise"
-# Deep clean and optimize your Mac
-brew "mole"
 # Terminal-based AI coding assistant
 cask "claude-code"
 
